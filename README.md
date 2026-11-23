@@ -55,6 +55,8 @@ ChatGPT (Codex) generated the implementation, tests and documentation in respons
 
 **One thing the agent got wrong and how it was found.** The initial frontend setup had a Vite development command and relative API URLs, but no proxy. Checking the development configuration showed that the UI would request data from the Vite server. A later commit forwards those requests to FastAPI. The production build uses a single origin.
 
+[Download DealerOS source code (.zip)](https://github.com/K-REVANTH-KUMAR/dealeros/archive/refs/heads/main.zip)
+
 **Least certain part.** The interpretation of VOIDED is the least certain business rule. System B has no status column. The current implementation compares the amounts normally. An example of an expected reversal from the data owner would clarify the intended behavior.
 
 **First improvement with a second day.** Add a persistent import-issues report by source row and column. The raw cells are already preserved, but an operator investigating an invalid value currently has to consult the import output and source record.
